@@ -51,8 +51,7 @@ function Header(){
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                    <Nav.Link href="#home">Inicio</Nav.Link>
-                    <Nav.Link href="#link">Favoritas</Nav.Link>
+                        <Nav.Link href="#home">Inicio</Nav.Link>
                     </Nav>
                     <FormControl id="Buscador" onInput={handleInput} type="text" placeholder="Search" className="mr-sm-2 w-50" />
                 </Navbar.Collapse>

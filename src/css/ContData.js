@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
 const ContAnime = styled.div`
-    .CardAnime{
-        width: 13rem;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-right: 5px;
-        margin-bottom: 5px;
-    }
     .textSinopsis{
         font-size: .7em;
     }
@@ -18,6 +11,13 @@ const ContAnime = styled.div`
         width: 100%;
         height: 200px;
         object-fit: cover;
+    }
+    .CardAnime{
+        width: 20rem;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-right: 5px;
+        margin-bottom: 5px;
     }
 `;
 

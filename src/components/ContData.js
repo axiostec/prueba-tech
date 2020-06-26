@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Container} from 'react-bootstrap'
 import CardAnime from '../components/CardAnime';
 import { useSelector, useDispatch } from 'react-redux';
@@ -28,15 +28,15 @@ function ContData(){
         )
         .catch(
             err => {
-                alert(err);
+               console.log(err);
             }
         )
         .catch(
             err => {
-                alert(err);
+               console.log(err);
             }
         )
-    }, [dispatch]);
+    }, [state.TermBusqueda]);
 
     return(
         <ContAnime>
