@@ -12,6 +12,7 @@ export default class App extends Component{
         return(
             <ContApp>
                 <Header/>
+                <ContData/>
             </ContApp>
         )
     }
