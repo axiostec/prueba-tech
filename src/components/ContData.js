@@ -1,15 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Container} from 'react-bootstrap'
 import CardAnime from '../components/CardAnime';
-
+import { useSelector, useDispatch } from 'react-redux'
 // css
 import ContAnime from '../css/ContData';
 
 function ContData(){
-    const [AnimeList, setAnimeList] = useState([]);
+    const dispatch = useDispatch();
+    const AnimeList = useSelector((state)=>state.AnimeList);
 
     useEffect(()=>{
-        fetch('https://api.jikan.moe/v3/search/anime?q=dragon')
+        fetch(`https://api.jikan.moe/v3/search/anime?q=samurai`)
         .then(
             result => {
                 return result.json()
@@ -17,8 +18,11 @@ function ContData(){
         )
         .then(
             data => {
-                console.log(data.results);
-                setAnimeList(data.results);
+                const animes = data.results;
+                dispatch({
+                    type: 'SET_ANIME_LIST',
+                    payload: animes
+                });
             }
         )
         .catch(
@@ -43,7 +47,7 @@ function ContData(){
                         AnimeList.map( anime => {
                             return(
                                 <CardAnime 
-                                    mal_id={anime.mal_id} 
+                                    key={anime.mal_id}
                                     image_url={anime.image_url} 
                                     title={anime.title} 
                                     synopsis={anime.synopsis}
